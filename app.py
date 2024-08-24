@@ -17,9 +17,12 @@ def main() -> None:
 
 			if opcion == 1:
 				texto = operaciones.leer_texto('Ingrese una cadena de texto')
-				print(f'Resultado: \"{cadenas.invertir(texto)}\"')
+				print(f'Cadena original:  \"{texto.strip()}\"')
+				print(f'Cadena invertida: \"{cadenas.invertir(texto)}\"')
+				# print(f'Resultado: \"{cadenas.invertir(texto)}\"')
 			elif opcion == 2:
-				print('222')
+				texto = operaciones.leer_texto('Ingrese una cadena de texto')
+				print(f'numero de la palabras: {cadenas.contador_de_palabras(texto)}')
 			elif opcion == 3:
 				print('333')
 			elif opcion == 4:
