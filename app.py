@@ -2,6 +2,7 @@ from config import RED, RESET, LIMITE_INFERIOR, LIMITE_SUPERIOR
 from terminal.menu import menu
 from terminal import operaciones
 from herramientas import cadenas
+from herramientas import algebra
 
 def main() -> None:
 	while True:
@@ -26,15 +27,17 @@ def main() -> None:
 				texto = operaciones.leer_texto('Ingrese una el nombre de una organización')
 				print(f'Acrónimo: {cadenas.acronimos(texto)}')
 			elif opcion == 4:
-				print('444')
+				numero = operaciones.leer_entero('Ingrese un numero')
+				resultado = 'par' if algebra.es_par(numero) else 'impar'
+				print(f'El numero {numero} es {resultado}')
 			elif opcion == 5:
 				print('555')
 			elif opcion == 6:
 				print('666')
 			elif opcion == 7:
 				texto = operaciones.leer_texto('Ingrese una oración')
-				resultado = 'verdadero' if cadenas.palindromo(texto) else 'falso'
-				print(f'Resultado: {resultado}')
+				resultado = 'si' if cadenas.palindromo(texto) else 'no'
+				print(f'La cadena \"{texto}\" {resultado} es palindromo')
 			else:
 				break			
 		except ValueError as e:
