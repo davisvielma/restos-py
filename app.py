@@ -1,13 +1,14 @@
 from config import RED, RESET, LIMITE_INFERIOR, LIMITE_SUPERIOR
 from terminal.menu import menu
-from terminal.operaciones import leer_entero, limpiar_pantalla
+from terminal import operaciones
+from herramientas import cadenas
 
 def main() -> None:
 	while True:
 		try:
-			limpiar_pantalla()
+			operaciones.limpiar_pantalla()
 			menu()
-			opcion = leer_entero('Opción')
+			opcion = operaciones.leer_entero('Opción')
 
 			if opcion < LIMITE_INFERIOR or opcion > LIMITE_SUPERIOR:
 				raise ValueError(f'Ingrese un entero entre {LIMITE_INFERIOR} y {LIMITE_SUPERIOR}')
@@ -15,7 +16,8 @@ def main() -> None:
 			print()
 
 			if opcion == 1:
-				print('111')
+				texto = operaciones.leer_texto('Ingrese una cadena de texto')
+				print(f'Resultado: \"{cadenas.invertir(texto)}\"')
 			elif opcion == 2:
 				print('222')
 			elif opcion == 3:
