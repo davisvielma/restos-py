@@ -1,0 +1,13 @@
+def menu() -> None:
+	print("=========================")
+	print("     Menu de opciones    ")
+	print("=========================")
+	print("[1] Invertir una cadena")
+	print("[2] Contador de palabras")
+	print("[3] Formador de acronimos")
+	print("[4] Par o impar")
+	print("[5] Factorial")
+	print("[6] Fibonacci")
+	print("[7] Palindromo")
+	print("[8] Salir")
+	print("=========================")
