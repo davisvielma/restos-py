@@ -13,3 +13,12 @@ class TestCadenas(unittest.TestCase):
 		self.assertEqual(cadenas.contador_de_palabras('Me tome un cafe americano'), 5)
 		self.assertEqual(cadenas.contador_de_palabras(' Probando la funcion strip  '), 4)
 		self.assertEqual(cadenas.contador_de_palabras('Prueba de correcta'), 3)
+
+	def test_acronimos(self):
+		self.assertEqual(cadenas.acronimos('Asociacion de meseros'), 'ADM')
+		self.assertEqual(cadenas.acronimos('casona de ganaderos llaneros'), 'CDGL')
+
+	def test_palindromo(self):
+		self.assertTrue(cadenas.palindromo('  oSO '))
+		self.assertTrue(cadenas.palindromo('Anita lava la tina'))
+		self.assertFalse(cadenas.palindromo('papel'))

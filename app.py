@@ -23,7 +23,8 @@ def main() -> None:
 				texto = operaciones.leer_texto('Ingrese una cadena de texto')
 				print(f'Numero de la palabras: {cadenas.contador_de_palabras(texto)}')
 			elif opcion == 3:
-				print('333')
+				texto = operaciones.leer_texto('Ingrese una el nombre de una organización')
+				print(f'Acrónimo: {cadenas.acronimos(texto)}')
 			elif opcion == 4:
 				print('444')
 			elif opcion == 5:
@@ -31,7 +32,9 @@ def main() -> None:
 			elif opcion == 6:
 				print('666')
 			elif opcion == 7:
-				print('777')
+				texto = operaciones.leer_texto('Ingrese una oración')
+				resultado = 'verdadero' if cadenas.palindromo(texto) else 'falso'
+				print(f'Resultado: {resultado}')
 			else:
 				break			
 		except ValueError as e:
