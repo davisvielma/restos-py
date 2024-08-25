@@ -31,7 +31,9 @@ def main() -> None:
 				resultado = 'par' if algebra.es_par(numero) else 'impar'
 				print(f'El numero {numero} es {resultado}')
 			elif opcion == 5:
-				print('555')
+				numero = operaciones.leer_entero('Ingrese un numero')
+				algebra.controlador_factorial(algebra.factorial_recursivo, numero)
+				algebra.controlador_factorial(algebra.factorial_iterativo, numero)
 			elif opcion == 6:
 				print('666')
 			elif opcion == 7:
