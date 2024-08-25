@@ -32,10 +32,12 @@ def main() -> None:
 				print(f'El numero {numero} es {resultado}')
 			elif opcion == 5:
 				numero = operaciones.leer_entero('Ingrese un numero')
-				algebra.controlador_factorial(algebra.factorial_recursivo, numero)
-				algebra.controlador_factorial(algebra.factorial_iterativo, numero)
+				operaciones.controlador_de_funcion(algebra.factorial_recursivo, numero)
+				operaciones.controlador_de_funcion(algebra.factorial_iterativo, numero)
 			elif opcion == 6:
-				print('666')
+				numero = operaciones.leer_entero('Ingrese un numero')
+				operaciones.controlador_de_funcion(algebra.fibonacci_recursivo, numero)
+				operaciones.controlador_de_funcion(algebra.fibonacci_iterativo, numero)
 			elif opcion == 7:
 				texto = operaciones.leer_texto('Ingrese una oración')
 				resultado = 'si' if cadenas.palindromo(texto) else 'no'

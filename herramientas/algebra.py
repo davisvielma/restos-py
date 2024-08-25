@@ -1,5 +1,3 @@
-import time
-
 def es_par(numero: int) -> bool:
 	return numero % 2 == 0
 
@@ -21,12 +19,23 @@ def factorial_iterativo(numero: int) -> int:
 		numero -= 1
 	return resultado
 
-def controlador_factorial(funcion, numero: int) -> None:
-	print(f'\n{funcion.__name__}')
-	print('===================')
-	inicio = time.time()
-	resultado = funcion(numero)
-	fin = time.time()
-	print(f'El factorial de {numero} es {resultado}')
-	print(f'Su tiempo de ejecucion es {fin - inicio} segundos')
+def fibonacci_recursivo(numero: int) -> int:
+	if numero < 0:
+		raise ValueError('Ingrese un numero entero positivo')
 
+	if numero <= 1:
+		return numero
+	return fibonacci_recursivo(numero - 1) + fibonacci_recursivo(numero - 2)
+
+def fibonacci_iterativo(numero: int) -> int:
+	if numero < 0:
+		raise ValueError('Ingrese un numero entero positivo')
+
+	f0 = 0
+	f1 = 1
+	while numero > 0:
+		f = f0 + f1
+		f0 = f1
+		f1 = f
+		numero -= 1
+	return f0
